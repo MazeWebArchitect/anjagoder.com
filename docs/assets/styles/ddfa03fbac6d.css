@@ -1,0 +1,759 @@
+
+
+	body {
+		background-color: #0b0c11;
+	}
+	.wp-block-cover .wp-block-cover-text,
+    h1, h2, h3, h4, h5, h6,
+	.liza_albums_ajax_item,
+	.liza_counter_content .liza_stat_count {
+        color: #ffffff;
+    }
+    
+        header .liza_image_logo {
+            width: 290px;
+            height: 118px;
+            background: url("") 0 0 no-repeat transparent;
+        }
+        header .liza_logo_wrapper {
+			padding-top: 38px;
+			padding-bottom: 37px;
+		}
+		@media only screen and (max-width: 760px) {
+			header .liza_logo_wrapper {
+				padding-top: 19px;
+				padding-bottom: 18.5px;
+			}
+			.liza_mobile_header_logo {
+				padding-left:19px!important;
+			}
+			.liza_mobile_button_wrapper {
+				padding-right:19px!important;
+			}
+			.liza_simple_slider_controls {
+				margin-right:-5px;
+				right:19px;
+			}
+		}
+        
+            header .liza_image_logo.liza_retina {
+                width: 145px;
+                height: 59px;
+                background-size: 145px 59px;
+            }
+            
+			header.logo_center .liza_header_middle_part {
+                width: 145px;
+			}
+			header.logo_center .liza_header_left_part,
+			header.logo_center .liza_header_right_part  {
+				width:calc(50% - 73px);
+			}
+			header.logo_right .liza_header_right_part {
+				width: 145px;
+			}		
+			header.logo_right .liza_header_left_part {
+				width: calc(100% - 145px);
+			}
+		
+	
+        footer .liza_image_logo {
+            width: 290px;
+            height: 118px;
+            background: url("../media/2017/07/anja-goderwhite.png") 0 0 no-repeat transparent;
+        }
+        
+            footer .liza_image_logo.liza_retina {
+                width: 145px;
+                height: 59px;
+                background-size: 145px 59px;
+            }
+            
+        body input#coupon_code,
+        body .liza_container .widget_product_search input[type="search"].search-field,
+		select,
+		input[type="search"],
+		input[type="text"],
+		input[type="number"],
+		input[type="tel"],
+		input[type="email"],
+		input[type="password"],
+		textarea {
+			border-color: #303342;
+			color: #ffffff;
+		}
+		input[type="tel"]::-webkit-input-placeholder,
+		input[type="search"]::-webkit-input-placeholder,
+		input[type="text"]::-webkit-input-placeholder,
+		input[type="number"]::-webkit-input-placeholder,
+		input[type="email"]::-webkit-input-placeholder,
+		input[type="password"]::-webkit-input-placeholder,
+		textarea::-webkit-input-placeholder {
+			color: #ffffff;
+		}
+		
+		.comment-form-cookies-consent input[type="checkbox"]:checked + label:before,
+		.comment-form-cookies-consent input[type="checkbox"]:not(:checked) + label:before {
+			border: 2px solid #303342;
+		}
+		.comment-form-cookies-consent input[type="checkbox"]:checked + label:after,
+		.comment-form-cookies-consent input[type="checkbox"]:not(:checked) + label:after {
+			color: #ffffff;
+		}
+
+		input[type="search"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		input[type="text"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		input[type="number"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		input[type="tel"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		input[type="email"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		input[type="password"]::-moz-placeholder {
+			color: #ffffff;
+		}
+		textarea::-moz-placeholder {
+			color: #ffffff;
+		}
+        
+        .liza_select {
+            color:#ffffff;
+            border:2px solid #303342;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        .liza_tiny .liza_select_wrapper ul.select-options {
+            border:2px solid #303342;
+            border-top: none;
+            background: #0b0c11;
+        }
+        .liza_tiny .liza_select_wrapper ul.select-options li {
+            color: #c3c5ce;
+            font-size: 13px;
+        }
+        .liza_tiny .liza_select_wrapper ul.select-options li:hover {
+            color: #820000;
+        }
+
+	
+		* {
+			font-family:"PT Sans";
+		}
+		p, td, div {
+			color:#c3c5ce;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+		}	
+		.wp-block-cover .wp-block-cover-text,
+		h1, h2, h3, h4, h5, h6 {
+			font-family: "PT Sans";
+			font-weight: 400;
+		}
+		.liza_mobile_header a,
+		.liza_mobile_header span,
+		.liza_header_wrapper span,
+		.liza_header_wrapper a {
+			 font-family:"PT Sans";
+			 font-weight:400;
+		}
+		.liza_mobile_menu ul.sub-menu > li > a, 
+		.liza_aside_menu_wrapper ul.sub-menu > li > a,
+		.liza_mobile_menu ul.liza_menu > li > a, 
+		.liza_aside_menu_wrapper ul.liza_menu > li > a {
+			font-family:"PT Sans";
+			font-weight:400;
+		}
+		a {
+			color:#820000;
+		}
+		a:hover {
+			color:#c3c5ce;
+		}
+		.wp-block-pullquote cite,
+        .wp-block-latest-comments__comment-date,
+        body blockquote cite {
+            color:#ffffff;
+        }
+        .wp-block-latest-comments__comment a {
+            color:#ffffff;
+        }
+        .wp-block-latest-comments__comment a:hover {
+            color:#820000;
+        }
+        
+		blockquote:after {
+			border-color: #0b0c11 transparent transparent transparent;
+		}
+		.liza_404_content_wrapper p, 
+		.liza_cs_content_wrapper p {
+			color:#ffffff;
+		}
+		.search_wrapper404 input[type="text"] {
+			border-color:#ffffff;
+		}
+		.search_wrapper404 input[type="submit"] {
+			background:#820000;
+		}
+		.search_wrapper404 input[type="submit"]:hover {
+			background:#303342;
+		}
+		.liza_button, 
+		a.liza_button {
+			border-color:#ffffff;
+			color:#ffffff;
+		}
+		.liza_button:hover, 
+		a.liza_button:hover,
+		a.liza_button.liza_solid_button {
+			background:#820000;
+			border-color:#820000;
+			color:#ffffff;
+		}
+		a.liza_button.liza_solid_button:hover {
+			border-color:#ffffff;
+			color:#ffffff;			
+			background:rgba(130,0,0, 0);
+		}        
+        .wp-block-button a.wp-block-button__link:not(.has-text-color) {
+            color:#ffffff;
+        }
+        body .wp-block-button a.wp-block-button__link:hover {
+			background:#820000;
+			color:#ffffff;            
+        }
+        body .wp-block-button.is-style-outline a.wp-block-button__link:hover {
+            border-color:#820000;
+            background:#820000;
+            color:#ffffff;
+        }
+    
+		header.liza_header .liza_header_bg {
+			background: #0c0c10;
+		}
+        .liza_transparent_header .liza_mobile_header,
+		.liza_transparent_header .liza_mobile_header_wrapper,
+		html body.page-template-page-coming-soon .liza_mobile_header,
+		.liza_transparent_header header.liza_header .liza_header_bg {
+			background:none;
+		}
+		header.liza_header span {
+			color:#ffffff;
+		}
+		.liza_mobile_header a,
+		header.liza_header a {
+			color:#ffffff;
+		}
+		.liza_transparent_header .liza_mobile_header_wrapper a,
+		.liza_transparent_header header.liza_header a {
+			color:#ffffff;
+		}
+		.liza_mobile_header a:hover,
+		header.liza_header a:hover {
+			color:#820000;
+		}
+		.liza_menu_opened a.liza_menu_toggler {
+			color:rgba(255,255,255, 0)!important;
+		}
+		a.liza_menu_toggler span.liza_menu_ico span {
+			background:#ffffff;
+		}
+		a.liza_menu_toggler:hover span.liza_menu_ico span {
+			background:#820000;
+		}
+
+		.liza_transparent_header a.liza_menu_toggler span.liza_menu_ico span {
+			background:#ffffff;
+		}
+		.liza_transparent_header a.liza_menu_toggler:hover span.liza_menu_ico span {
+			background:#820000;
+		}
+
+		.liza_transparent_header a.liza_menu_toggler:hover span.liza_menu_ico span {
+			background:#820000;
+		}
+		.liza_social_icons_list li a {
+			color:#ffffff;
+		}
+		.liza_social_icons_list li a:hover {
+			color:#820000;
+		}
+		
+		
+		/* Aside Menu */
+		.liza_aside_menu_wrapper {
+			background: rgba(12,12,16, 0.9)!important;
+		}
+		.liza_aside_menu_wrapper nav.liza_main_nav {
+			height:calc(100% - 134px - 120px);
+			top:134px;
+		}
+		.has_admin_bar .liza_aside_menu_wrapper nav.liza_main_nav {
+			height:calc(100% - 134px - 120px - 32px);
+		}
+		.liza_aside_menu_wrapper a.liza_menu_toggler {
+			top: 67px;
+		}
+		.liza_mobile_menu,
+		.liza_mobile_menu a,
+		.liza_aside_menu_wrapper,
+		.liza_aside_menu_wrapper a {
+			color:#ffffff;
+		}
+		.liza_aside_menu_share_label:before {
+			background:#ffffff;
+		}
+		.liza_aside_menu_wrapper a:hover {
+			color:#820000;
+		}
+		.liza_mobile_menu ul li > a:before,
+		.liza_aside_menu_wrapper ul li > a:before {
+			background:#2b2d33;
+		}		
+		.liza_aside_menu_wrapper ul.liza_menu > li:hover > a {
+			color:#ffffff;
+		}
+		.liza_mobile_menu ul.liza_menu li.current-menu-parent > a,
+		.liza_mobile_menu ul.liza_menu li.current-menu-item > a,
+		.liza_mobile_menu ul.liza_menu li.current-menu-ancestor > a,
+		.menu_simple_showed ul.liza_menu ul.sub-menu li.current-menu-parent > a,
+		.menu_simple_showed ul.liza_menu ul.sub-menu li.current-menu-item > a,
+		.menu_simple_showed ul.liza_menu ul.sub-menu li.current-menu-ancestor > a,
+		.menu_simple_showed ul.liza_menu li:hover > a,
+		.menu_simple ul.liza_menu ul.sub-menu li.current-menu-parent > a,
+		.menu_simple ul.liza_menu ul.sub-menu li.current-menu-item > a,
+		.menu_simple ul.liza_menu ul.sub-menu li.current-menu-ancestor > a,
+		.menu_simple ul.liza_menu li:hover > a,
+		.liza_aside_menu_wrapper ul.liza_menu li.current-menu-parent > a,
+		.liza_aside_menu_wrapper ul.liza_menu li.current-menu-item > a,
+		.liza_aside_menu_wrapper ul.liza_menu li.current-menu-ancestor > a,
+		.liza_aside_menu_wrapper ul.liza_menu li:hover > a {
+			color:#820000;
+		}
+		
+		
+		/* Simple Menu */
+		.menu_simple_showed ul.sub-menu,
+		.menu_simple ul.sub-menu {
+			padding-top:67px;			
+		}
+		.menu_simple_showed ul.sub-menu > li,
+		.menu_simple ul.sub-menu > li {
+			background:#13151c;
+		}
+		.menu_simple_showed ul.sub-menu ul.sub-menu > li,
+		.menu_simple ul.sub-menu ul.sub-menu > li {
+			background:#1c1e25;
+		}
+		.menu_simple_showed ul.sub-menu li > a:before,
+		.menu_simple ul.sub-menu > li > a:before {
+			background:#2b2d33;
+		}
+		.liza_main_nav ul.liza_menu li:hover > a {
+			color:#820000;
+		}
+		
+		.menu_simple_showed ul.liza_menu > li.current-menu-parent > a:before,
+		.menu_simple ul.liza_menu > li.current-menu-parent > a:before,
+		.menu_simple_showed ul.liza_menu > li.current-menu-item > a:before,
+		.menu_simple ul.liza_menu > li.current-menu-item > a:before,
+		.menu_simple_showed ul.liza_menu > li.current-menu-ancestor > a:before,
+		.menu_simple ul.liza_menu > li.current-menu-ancestor > a:before {
+			background:#ffffff;
+		}
+		.menu_simple_showed ul.liza_menu > li.current-menu-parent:hover > a:before,
+		.menu_simple ul.liza_menu > li.current-menu-parent:hover > a:before,
+		.menu_simple_showed ul.liza_menu > li.current-menu-item:hover > a:before,
+		.menu_simple ul.liza_menu > li.current-menu-item:hover > a:before,
+		.menu_simple_showed ul.liza_menu > li.current-menu-ancestor:hover > a:before,
+		.menu_simple ul.liza_menu > li.current-menu-ancestor:hover > a:before {
+			background:#820000;
+		}
+
+    
+		footer.liza_footer {
+			border-top:1px solid #242529;
+			background:#0b0c11;
+			padding-top:80px;
+			padding-bottom:77px;
+		}
+		footer.liza_footer span,
+		footer.liza_footer div,
+		footer.liza_footer p {
+			color:#c3c5ce;
+		}
+		footer.liza_footer a {
+			color:#c3c5ce;
+		}
+		footer.liza_footer a:hover {
+			color:#820000;
+		}
+		.liza_footer_left_part,
+		.liza_footer_right_part {
+			width:calc(50% - 73px);
+		}
+		.liza_footer_middle_part {
+			width:145px;
+		
+		}
+    
+		.liza_title_breadcrumb_wrapper a:hover {
+			color:#820000;
+		}
+		select option {
+			background:#0b0c11;
+		}
+		input[type="button"]:hover,
+		input[type="reset"]:hover,
+		input[type="submit"]:hover {
+			background:#820000;
+		}
+    
+        ul.wp-block-latest-posts li a,
+        ul.wp-block-archives-list li a,
+        ul.wp-block-categories-list li a,
+		.widget a {
+			color:#c3c5ce;
+		}
+        ul.wp-block-latest-posts li a:hover,
+        ul.wp-block-archives-list li a:hover,
+        ul.wp-block-categories-list li a:hover,
+		.widget a:hover {
+			color:#820000;
+		}
+        .tagcloud a,
+        .widget_product_tag_cloud .tagcloud a {
+            background: transparent;
+        }
+        .widget_product_tag_cloud .tagcloud a:hover,
+		.tagcloud a:hover {
+			background:#820000;
+			border-color:#820000;
+		}
+        .widget_product_tag_cloud .tagcloud a:hover,
+		.widget .tagcloud a:hover {
+			color:#ffffff;
+		}
+		.liza_about_widget .liza_widget_socials a:hover {
+			background:#820000;
+		}
+	
+		.liza_meta,
+		.liza_meta div,
+		.liza_meta a {
+			color:#ffffff;
+		}
+		.liza_meta:before {
+			background:#ffffff;
+		}
+		.liza_meta a:hover {
+			color:#820000;
+		}
+		.liza_element_blog .read_more_cont a,
+		.liza_element_blog .read_more_cont a:hover {
+			color:#ffffff;			
+		}
+		.liza_element_blog .read_more_cont a:before {
+			background:#ffffff;
+		}
+        body.woocommerce .liza_container nav.woocommerce-pagination ul.page-numbers li span,
+        body.woocommerce .liza_container nav.woocommerce-pagination ul.page-numbers li a,
+		body .nav-links span,
+		body .nav-links a {
+			color:#ffffff;
+		}
+        body.woocommerce .liza_container nav.woocommerce-pagination ul.page-numbers li span.current,
+		body .nav-links span {
+			background:#820000;
+			border: 2px solid #820000;
+		}
+        body.woocommerce .liza_container nav.woocommerce-pagination ul.page-numbers li a,
+		body .nav-links a {
+			border: 2px solid #303342;
+		}
+        body.woocommerce .liza_container nav.woocommerce-pagination ul.page-numbers li a:hover,
+		body .nav-links a:hover {
+			border: 2px solid #ffffff;
+		}
+		body .nav-links span.page-numbers.dots {
+			border: 2px solid #303342;
+		}
+
+		.liza_title a:hover {
+			color:#820000;
+		}
+		.liza_post_footer .liza_post_tags i,
+		.liza_post_footer .liza_post_tags a,
+		.liza_post_footer .liza_post_tags div {
+			color:#ffffff;
+		}
+		.liza_prev_post_content .liza_prev_link,
+		.liza_next_post_content .liza_next_link {
+			color:#ffffff;
+		}
+		.liza_prev_post_content .liza_prev_link:before,
+		.liza_next_post_content .liza_next_link:before {
+			background:#ffffff;
+		}
+		.liza_next_post a:hover h6,
+		.liza_prev_post a:hover h6,
+		.liza_next_post a:hover,
+		.liza_prev_post a:hover {
+			color:#820000;
+		}
+		.liza_next_post a:hover:before,
+		.liza_prev_post a:hover:before {
+			background:#820000;
+		}
+		.liza_post_title:hover h5 {
+			color:#820000;
+		}
+		.liza_comment_info .liza_comment_author,
+		.liza_comment_date {
+			color:#ffffff;
+		}
+		.liza_comment_reply_wrapper a {
+			color:#ffffff;
+		}
+		.liza_comment_reply_wrapper a:hover {
+			color:#820000;
+		}
+		.liza_comment_reply_wrapper a:before {
+			background:#ffffff;
+		}
+		.liza_comment_reply_wrapper a:hover:before {
+			background:#820000;
+		}
+	
+		.liza_testimonials_slider .liza_testimonials_item div {
+			color:#ffffff;
+		}
+		.liza_testimonials_slider .liza_testimonials_item div.testimonial_additional {
+			color:#c3c5ce;
+		}
+		.liza_cs_sharing span:before,
+		.liza_slider_sharing_block span:before {
+			background:#ffffff;
+		}
+		.liza_cs_sharing span,
+		.liza_cs_sharing a,
+		.liza_slider_sharing_block span,
+		.liza_slider_sharing_block a {
+			color:#ffffff;
+		}
+		.liza_cs_sharing a:hover {
+			color:#820000;
+		}
+
+		.liza_element_wrap .countdown .item span,
+		.liza_element_wrap .countdown .item span.label {
+			color:#ffffff;
+		}
+		.liza_cs_form input[type="text"],
+		.liza_cs_form input[type="email"] {
+			border-color:#ffffff;
+		}
+		.liza_cs_form input[type="submit"] {
+			background:#820000;
+		}
+		.liza_cs_form input[type="submit"]:hover {
+			background:#303342;
+		}
+		.liza_albums_ajax_item {
+			color:#ffffff;
+		}
+		
+		/* Projects Module */
+		a.project_listing_see_btn {
+			color:#ffffff;
+		}
+		.liza_stand_fi_project_listing  a.project_listing_see_btn {
+			background:#820000;
+		}
+		
+		a.project_listing_see_btn:before {
+			background:#ffffff;
+		}
+		.liza_grid_post_title a:hover h3 {
+			color:#820000;
+		}
+		.liza_project_post_content a.project_listing_see_btn:hover {
+			color:#820000;
+		}
+		.liza_project_post_content a.project_listing_see_btn:hover:before {
+			background:#820000;
+		}
+		
+		.liza_grid_post_title a:hover h5 {
+			color:#820000;
+		} 
+		
+		/* Filter */
+		.liza_filter_inner li a {
+			color:#ffffff;
+		}
+		.liza_filter_inner li.selected a {
+			color:#820000;
+		}
+		.liza_filter_inner li a:before {
+			background:#ffffff;
+		}
+		.liza_filter_inner li.selected a:before {
+			background:#820000;
+		}
+		
+		/* Liza Albums */
+		.liza_albums_slide_title a {
+			color:#ffffff;
+		}
+		.liza_albums_slide_meta {
+			padding:0 0 0 60px;
+		}
+		.liza_albums_slide_meta:before {
+			width:40px;
+		}
+		.liza_albums_slider_counter span,
+		.liza_albums_slider_counter i {
+			color:#ffffff;
+		}
+		.liza_scroll_to_explore span {
+			color:#ffffff;
+		}
+		.liza_scroll_to_explore span:before {
+			background:#ffffff;
+		}
+		.liza_albums_ajax_template_wrapper {
+			background:#0b0c11;
+		}
+		.liza_albums_ajax_numbers div {
+			color:#ffffff;
+		}
+		.liza_albums_ajax_numbers div.liza_albums_ajax_number_item:before {
+			background:#ffffff;
+		}
+		.liza_contact_info  a:hover {
+			color:#ffffff;
+		}
+		.liza_promo_text,
+		.liza_promo_title {
+			color:#ffffff;
+		}
+		.liza_promo_text:before {
+			background:#ffffff;
+		}
+		.liza_back_to_top:hover {
+			background:#820000;
+			border-color:#820000;
+		}
+		
+		/* Mobile Header */
+		.liza_mobile_header,
+        .liza_mobile_header_wrapper,
+		.liza_mobile_menu_wrapper {
+			background:#0c0c10;
+		}
+		
+		/* Coming Soon Page */
+		.liza_cs_sharing span, 
+		.liza_cs_sharing a, .liza_slider_sharing_block span, 
+		.liza_slider_sharing_block a,
+		.liza_element_wrap .countdown .item span, 
+		.liza_element_wrap .countdown .item span.label,
+		h1.liza_cs_title {
+			color: #ffffff;
+		}
+		.liza_cs_sharing span:before, .liza_slider_sharing_block span:before {
+			background: #ffffff;
+		}
+		.liza_cs_shortcode_wrapper select,
+		.liza_cs_shortcode_wrapper input[type="search"],
+		.liza_cs_shortcode_wrapper input[type="text"],
+		.liza_cs_shortcode_wrapper input[type="number"],
+		.liza_cs_shortcode_wrapper input[type="tel"],
+		.liza_cs_shortcode_wrapper input[type="email"],
+		.liza_cs_shortcode_wrapper input[type="password"],
+		.liza_cs_shortcode_wrapper textarea {
+			border-color: #ffffff;
+			color: #ffffff;
+		}
+		.liza_cs_shortcode_wrapper input[type="tel"]::-webkit-input-placeholder,
+		.liza_cs_shortcode_wrapper input[type="search"]::-webkit-input-placeholder,
+		.liza_cs_shortcode_wrapper input[type="text"]::-webkit-input-placeholder,
+		.liza_cs_shortcode_wrapper input[type="number"]::-webkit-input-placeholder,
+		.liza_cs_shortcode_wrapper input[type="email"]::-webkit-input-placeholder,
+		.liza_cs_shortcode_wrapper input[type="password"]::-webkit-input-placeholder,
+		.liza_cs_shortcode_wrapper textarea::-webkit-input-placeholder {
+			color: #ffffff;
+		}
+
+		.liza_cs_shortcode_wrapper input[type="search"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		.liza_cs_shortcode_wrapper input[type="text"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		.liza_cs_shortcode_wrapper input[type="number"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		.liza_cs_shortcode_wrapper input[type="tel"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		.liza_cs_shortcode_wrapper input[type="email"]::-moz-placeholder {
+			color: #ffffff;
+		}
+
+		.liza_cs_shortcode_wrapper input[type="password"]::-moz-placeholder {
+			color: #ffffff;
+		}
+		.liza_cs_shortcode_wrapper textarea::-moz-placeholder {
+			color: #ffffff;
+		}
+		
+		/* 404 */
+		.liza_404_content_wrapper p,
+		.liza_404_content_wrapper td,
+		.liza_404_content_wrapper div,
+		.liza_404_content_wrapper h1,
+		.liza_404_content_wrapper h2,
+		.liza_404_content_wrapper h3,
+		.liza_404_content_wrapper h4,
+		.liza_404_content_wrapper h5,
+		.liza_404_content_wrapper h6 {
+			color:#ffffff;
+		}
+		
+		.liza_404_content_wrapper input.liza_field_search {
+			color: #ffffff;
+			border-color: #ffffff;
+		}
+		.liza_404_content_wrapper input.liza_field_search::-webkit-input-placeholder {
+			color: #ffffff;
+		}
+		.liza_404_content_wrapper input.liza_field_search::-moz-placeholder {
+			color: #ffffff;
+		}
+	
+		.wp-block-code, 
+		.wp-block-preformatted pre,
+		.wp-block-image figcaption {
+			color: #c3c5ce;
+		}
+	
+/*# sourceURL=liza-theme-inline-css */
