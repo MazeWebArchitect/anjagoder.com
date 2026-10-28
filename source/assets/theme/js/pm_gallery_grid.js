@@ -1,0 +1,179 @@
+"use strict";
+var $anja_goder_container = jQuery(".anja_goder_grid_inner"),
+  anja_goder_grid_array = [],
+  $anja_goder_grid_gallery_array = jQuery(".anja_goder_grid_gallery_array"),
+  $anja_goder_grid_wrapper = jQuery(".anja_goder_grid_wrapper");
+if (
+  ($anja_goder_grid_wrapper.each(function () {
+    var a = jQuery(this);
+    anja_goder_grid_array["anja_goder_grid_" + a.attr("data-uniqid")] = {};
+    var r = anja_goder_grid_array["anja_goder_grid_" + a.attr("data-uniqid")];
+    ((r.id = jQuery(this).attr("data-uniqid")), (r.showed = 0), (r.items = []));
+    var i = r.items;
+    (a.find(".anja_goder_grid_gallery_array").length &&
+      a.find(".anja_goder_grid_gallery_array").each(function () {
+        (jQuery(this)
+          .find(".anja_goder_grid_array_item")
+          .each(function () {
+            var a = jQuery(this),
+              r = {};
+            ((r.slide_type = a.attr("data-type")),
+              (r.img = a.attr("data-img")),
+              (r.thmb = a.attr("data-thmb")),
+              (r.title = a.attr("data-title")),
+              (r.alt = a.attr("data-alt")),
+              (r.overlay = a.attr("data-overlay")),
+              (r.counter = a.attr("data-counter")),
+              (r.size = a.attr("data-size")),
+              i.push(r));
+          }),
+          jQuery(this).remove());
+      }),
+      (r.obj = jQuery(".anja_goder_grid_" + r.id)),
+      (r.init = function () {
+        var a = this;
+        (this.obj.find(".grid_load_more").on("click", function () {
+          a.loadmore.call(a);
+        }),
+          this.setup.call(this),
+          this.preloader.call(this));
+      }),
+      (r.preloader = function () {
+        var a,
+          r,
+          i = this,
+          e = this.obj;
+        (e.find(".anja_goder_grid_inner").isotope("layout"),
+          e.find(".load_anim:first").length > 0
+            ? ((a = new Image()),
+              (r = jQuery(".load_anim:first").find("img").attr("src")),
+              (a.src = r),
+              (a.onload = function () {
+                jQuery(".load_anim:first")
+                  .removeClass("anim_el2")
+                  .removeClass("anim_el")
+                  .removeClass("load_anim")
+                  .animate({ "z-index": "15" }, 200, function () {
+                    i.preloader.call(i);
+                  });
+              }))
+            : i.setup.call(i));
+      }),
+      (r.setup = function () {
+        var a = this.obj;
+        a.find(".anja_goder_js_bg_color").length &&
+          a.find(".anja_goder_js_bg_color").each(function () {
+            jQuery(this).css(
+              "background-color",
+              jQuery(this).attr("data-bgcolor"),
+            );
+          });
+        var r = Math.floor(
+          parseInt(a.find(".anja_goder_grid_inner").attr("data-pad")) / 2,
+          10,
+        );
+        (anja_goder_window.width() < 1200 && r > 20 && (r /= 2),
+          anja_goder_window.width() < 760 && r > 10 && (r = 10),
+          jQuery(".anja_goder_single_gallery_grid").length
+            ? (a
+                .find(".anja_goder_grid_inner")
+                .css("margin", r + "px")
+                .css("margin-bottom", "0px"),
+              jQuery(".anja_goder_single_gallery_grid").css(
+                "padding-bottom",
+                r + "px",
+              ))
+            : a
+                .find(".anja_goder_grid_inner")
+                .css("margin", r + "px")
+                .css("margin-top", -1 * r + "px"),
+          a.find(".anja_goder_grid_inner").hasClass("side_paddings_on") &&
+            a
+              .find(".anja_goder_grid_inner")
+              .css("margin-left", -1 * r + "px")
+              .css("margin-right", -1 * r + "px"),
+          a
+            .find(".grid-item-inner")
+            .css({
+              "margin-left": r + "px",
+              "margin-top": r + "px",
+              "margin-right": r + "px",
+              "margin-bottom": r + "px",
+            }),
+          a.find(".anja_goder_grid_inner").isotope("layout"),
+          setTimeout(
+            "jQuery('.anja_goder_grid_inner').isotope('layout')",
+            1e3,
+          ));
+      }),
+      (r.loadmore = function () {
+        var a = this,
+          r = this.obj,
+          i = "",
+          e = r.attr("data-perload"),
+          t = (this.id, this.items.length),
+          d = (r.find(".grid-item").length, r.find(".anja_goder_grid_inner")),
+          n = r.find(".grid_load_more"),
+          o = d.attr("data-overlay");
+        if (this.showed >= t) n.slideUp(300);
+        else {
+          var _ = this.showed + parseInt(e) - 1;
+          if (_ + 1 < t) var g = _;
+          else {
+            g = t - 1;
+            n.slideUp(300);
+          }
+          for (var s = this.showed; s <= g; s++) {
+            i =
+              i +
+              '                <div class="grid-item element anim_el load_anim grid_b2p">                    <div class="grid-item-inner">                        <a href="' +
+              this.items[s].img +
+              '" class="swipebox" data-lightbox="grid_gallery' +
+              this.id +
+              '" title="' +
+              this.items[s].title +
+              '"></a>                        <img src="' +
+              this.items[s].thmb +
+              '" alt="' +
+              this.items[s].alt +
+              '" class="grid_thmb"/>                        <div class="grid_overlay" style="background-color:' +
+              o +
+              '"></div>                        <div class="anja_goder-img-preloader"></div>                    </div>\t\t\t\t</div>';
+            this.showed++;
+          }
+          var l = jQuery(i);
+          (d.data("isotope") &&
+            d.isotope("insert", l, function () {
+              d.isotope("layout");
+            }),
+            d.isotope("layout"),
+            a.preloader.call(a),
+            a.setup.call(a));
+        }
+        jQuery(".anja_goder_grid_inner").isotope("layout");
+      }));
+  }),
+  jQuery(".anja_goder_grid_inner").length > 0)
+)
+  $anja_goder_container = jQuery(".anja_goder_grid_inner");
+(jQuery(document).ready(function () {
+  $anja_goder_grid_wrapper.each(function () {
+    var a = jQuery(this),
+      r = anja_goder_grid_array["anja_goder_grid_" + a.attr("data-uniqid")];
+    r.init.call(r);
+  });
+}),
+  jQuery(window).on("load", function () {
+    $anja_goder_grid_wrapper.each(function () {
+      var a = jQuery(this),
+        r = anja_goder_grid_array["anja_goder_grid_" + a.attr("data-uniqid")];
+      r.setup.call(r);
+    });
+  }),
+  jQuery(window).resize(function () {
+    $anja_goder_grid_wrapper.each(function () {
+      var a = jQuery(this),
+        r = anja_goder_grid_array["anja_goder_grid_" + a.attr("data-uniqid")];
+      r.setup.call(r);
+    });
+  }));

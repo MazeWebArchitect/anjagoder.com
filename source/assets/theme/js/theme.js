@@ -1,0 +1,76 @@
+"use strict";
+var anja_goder_window = jQuery(window),
+  anja_goder_html = jQuery("html");
+(jQuery(function (o) {
+  (o(".anja_goder_preloader_wrapper").addClass("run_preloader"),
+    o(".anja_goder_menu_toggler").on("click", function () {
+      o(this).hasClass("anja_goder_menu_toggler_mobile") ||
+        o("header.anja_goder_header").toggleClass("anja_goder_menu_opened");
+    }),
+    o(".anja_goder_menu > li").hover(
+      function () {
+        o(this).addClass("anja_goder_menu_active");
+      },
+      function () {
+        o(this).removeClass("anja_goder_menu_active");
+      },
+    ),
+    o(".anja_goder_js_transition").each(function () {
+      o(this).css(
+        "transition-duration",
+        o(this).attr("data-transition") + "ms",
+      );
+    }),
+    o(".anja_goder_js_bg_color").each(function () {
+      o(this).attr("data-bgcolor") &&
+        o(this).css("background-color", o(this).attr("data-bgcolor"));
+    }),
+    o(".anja_goder_js_bg_image").each(function () {
+      o(this).css("background-image", "url(" + o(this).attr("data-src") + ")");
+    }),
+    o(".anja_goder_js_color").each(function () {
+      o(this).attr("data-color") &&
+        o(this).css("color", o(this).attr("data-color"));
+    }));
+  const a = o(".anja_goder_back_to_top"),
+    e = parseInt(a.css("bottom")) || 0;
+  function r() {
+    a.toggleClass(
+      "anja_goder_show_me",
+      anja_goder_window.scrollTop() > anja_goder_window.height(),
+    );
+    const r = o(".anja_goder_footer");
+    r.length &&
+      a.css(
+        "bottom",
+        e +
+          Math.max(
+            0,
+            anja_goder_window.scrollTop() +
+              anja_goder_window.height() -
+              r.offset().top,
+          ) +
+          "px",
+      );
+  }
+  (anja_goder_window.on("scroll", r),
+    r(),
+    a.on("click", function () {
+      o("html, body")
+        .stop()
+        .animate({ scrollTop: 0 }, 400, function () {
+          a.removeClass("anja_goder_show_me");
+        });
+    }),
+    o(".anja_goder_isotope_trigger").each(function () {
+      o(this).isotope({
+        layoutMode: o(this).hasClass("is_masonry") ? "masonry" : "fitRows",
+      });
+    }));
+}),
+  jQuery(window).on("load", function () {
+    (jQuery(".anja_goder_preloader_wrapper").addClass("remove_preloader"),
+      setTimeout(function () {
+        jQuery(".anja_goder_preloader_wrapper").remove();
+      }, 600));
+  }));

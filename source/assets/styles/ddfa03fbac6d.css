@@ -1,0 +1,321 @@
+body {
+  background-color: #0b0c11;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+}
+header .anja_goder_image_logo {
+  width: 290px;
+  height: 118px;
+  background: url("") 0 0 no-repeat transparent;
+}
+header .anja_goder_logo_wrapper {
+  padding-top: 38px;
+  padding-bottom: 37px;
+}
+@media only screen and (max-width: 760px) {
+  header .anja_goder_logo_wrapper {
+    padding-top: 19px;
+    padding-bottom: 18.5px;
+  }
+  .anja_goder_mobile_header_logo {
+    padding-left: 19px !important;
+  }
+  .anja_goder_mobile_button_wrapper {
+    padding-right: 19px !important;
+  }
+}
+header .anja_goder_image_logo.anja_goder_retina {
+  width: 145px;
+  height: 59px;
+  background-size: 145px 59px;
+}
+header.logo_center .anja_goder_header_middle_part {
+  width: 145px;
+}
+header.logo_center .anja_goder_header_left_part,
+header.logo_center .anja_goder_header_right_part {
+  width: calc(50% - 73px);
+}
+footer .anja_goder_image_logo {
+  width: 290px;
+  height: 118px;
+  background: url("../media/2017/07/anja-goderwhite.png") 0 0 no-repeat
+    transparent;
+}
+footer .anja_goder_image_logo.anja_goder_retina {
+  width: 145px;
+  height: 59px;
+  background-size: 145px 59px;
+}
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="text"],
+select,
+textarea {
+  border-color: #303342;
+  color: #fff;
+}
+input[type="email"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="search"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+input[type="email"]::-moz-placeholder,
+input[type="number"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="search"]::-moz-placeholder,
+input[type="text"]::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #fff;
+}
+* {
+  font-family: PT Sans;
+}
+div,
+p,
+td {
+  color: #c3c5ce;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.anja_goder_header_wrapper a,
+.anja_goder_header_wrapper span,
+.anja_goder_mobile_header a,
+.anja_goder_mobile_header span,
+.anja_goder_mobile_menu ul.anja_goder_menu > li > a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: PT Sans;
+  font-weight: 400;
+}
+a {
+  color: #820000;
+}
+a:hover {
+  color: #c3c5ce;
+}
+.anja_goder_cs_content_wrapper p {
+  color: #fff;
+}
+.anja_goder_button,
+a.anja_goder_button {
+  border-color: #fff;
+  color: #fff;
+}
+.anja_goder_button:hover,
+a.anja_goder_button:hover {
+  background: #820000;
+  border-color: #820000;
+  color: #fff;
+}
+header.anja_goder_header .anja_goder_header_bg {
+  background: #0c0c10;
+}
+.anja_goder_transparent_header .anja_goder_mobile_header,
+.anja_goder_transparent_header .anja_goder_mobile_header_wrapper,
+.anja_goder_transparent_header header.anja_goder_header .anja_goder_header_bg {
+  background: none;
+}
+.anja_goder_mobile_header a,
+.anja_goder_transparent_header .anja_goder_mobile_header_wrapper a,
+.anja_goder_transparent_header header.anja_goder_header a,
+header.anja_goder_header a,
+header.anja_goder_header span {
+  color: #fff;
+}
+.anja_goder_mobile_header a:hover,
+header.anja_goder_header a:hover {
+  color: #820000;
+}
+.anja_goder_menu_opened a.anja_goder_menu_toggler {
+  color: hsla(0, 0%, 100%, 0) !important;
+}
+a.anja_goder_menu_toggler span.anja_goder_menu_ico span {
+  background: #fff;
+}
+a.anja_goder_menu_toggler:hover span.anja_goder_menu_ico span {
+  background: #820000;
+}
+.anja_goder_transparent_header
+  a.anja_goder_menu_toggler
+  span.anja_goder_menu_ico
+  span {
+  background: #fff;
+}
+.anja_goder_transparent_header
+  a.anja_goder_menu_toggler:hover
+  span.anja_goder_menu_ico
+  span {
+  background: #820000;
+}
+.anja_goder_social_icons_list li a {
+  color: #fff;
+}
+.anja_goder_social_icons_list li a:hover {
+  color: #820000;
+}
+.anja_goder_mobile_menu,
+.anja_goder_mobile_menu a {
+  color: #fff;
+}
+.anja_goder_mobile_menu ul li > a:before {
+  background: #2b2d33;
+}
+.anja_goder_main_nav ul.anja_goder_menu li:hover > a,
+.anja_goder_mobile_menu ul.anja_goder_menu li.current-menu-item > a,
+.menu_simple ul.anja_goder_menu li:hover > a {
+  color: #820000;
+}
+.menu_simple ul.anja_goder_menu > li.current-menu-item > a:before {
+  background: #fff;
+}
+.menu_simple ul.anja_goder_menu > li.current-menu-item:hover > a:before {
+  background: #820000;
+}
+footer.anja_goder_footer {
+  border-top: 1px solid #242529;
+  background: #0b0c11;
+  padding-top: 80px;
+  padding-bottom: 77px;
+}
+footer.anja_goder_footer a,
+footer.anja_goder_footer div,
+footer.anja_goder_footer p,
+footer.anja_goder_footer span {
+  color: #c3c5ce;
+}
+.anja_goder_title_breadcrumb_wrapper a:hover,
+footer.anja_goder_footer a:hover {
+  color: #820000;
+}
+.anja_goder_footer_left_part,
+.anja_goder_footer_right_part {
+  width: calc(50% - 73px);
+}
+.anja_goder_footer_middle_part {
+  width: 145px;
+}
+select option {
+  background: #0b0c11;
+}
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #820000;
+}
+.widget a {
+  color: #c3c5ce;
+}
+.widget a:hover {
+  color: #820000;
+}
+.anja_goder_meta,
+.anja_goder_meta a,
+.anja_goder_meta div {
+  color: #fff;
+}
+.anja_goder_element_blog .read_more_cont a:before,
+.anja_goder_meta:before,
+.anja_goder_next_post_content .anja_goder_next_link:before,
+.anja_goder_prev_post_content .anja_goder_prev_link:before {
+  background: #fff;
+}
+.anja_goder_meta a:hover {
+  color: #820000;
+}
+.anja_goder_element_blog .read_more_cont a,
+.anja_goder_element_blog .read_more_cont a:hover {
+  color: #fff;
+}
+.anja_goder_title a:hover {
+  color: #820000;
+}
+.anja_goder_next_post_content .anja_goder_next_link,
+.anja_goder_post_footer .anja_goder_post_tags a,
+.anja_goder_post_footer .anja_goder_post_tags div,
+.anja_goder_post_footer .anja_goder_post_tags i,
+.anja_goder_prev_post_content .anja_goder_prev_link {
+  color: #fff;
+}
+.anja_goder_next_post a:hover,
+.anja_goder_next_post a:hover h6,
+.anja_goder_post_title:hover h5,
+.anja_goder_prev_post a:hover,
+.anja_goder_prev_post a:hover h6 {
+  color: #820000;
+}
+.anja_goder_next_post a:hover:before,
+.anja_goder_prev_post a:hover:before {
+  background: #820000;
+}
+.anja_goder_cs_sharing a,
+.anja_goder_cs_sharing span {
+  color: #fff;
+}
+.anja_goder_cs_sharing a:hover,
+.anja_goder_grid_post_title a:hover h3,
+.anja_goder_grid_post_title a:hover h5 {
+  color: #820000;
+}
+.anja_goder_back_to_top:hover {
+  background: #820000;
+  border-color: #820000;
+}
+.anja_goder_mobile_header,
+.anja_goder_mobile_header_wrapper,
+.anja_goder_mobile_menu_wrapper {
+  background: #0c0c10;
+}
+.anja_goder_cs_sharing a,
+.anja_goder_cs_sharing span,
+h1.anja_goder_cs_title {
+  color: #fff;
+}
+.anja_goder_cs_sharing span:before {
+  background: #fff;
+}
+.anja_goder_cs_shortcode_wrapper input[type="email"],
+.anja_goder_cs_shortcode_wrapper input[type="number"],
+.anja_goder_cs_shortcode_wrapper input[type="password"],
+.anja_goder_cs_shortcode_wrapper input[type="search"],
+.anja_goder_cs_shortcode_wrapper input[type="text"],
+.anja_goder_cs_shortcode_wrapper select,
+.anja_goder_cs_shortcode_wrapper textarea {
+  border-color: #fff;
+  color: #fff;
+}
+.anja_goder_cs_shortcode_wrapper input[type="email"]::-webkit-input-placeholder,
+.anja_goder_cs_shortcode_wrapper
+  input[type="number"]::-webkit-input-placeholder,
+.anja_goder_cs_shortcode_wrapper
+  input[type="password"]::-webkit-input-placeholder,
+.anja_goder_cs_shortcode_wrapper
+  input[type="search"]::-webkit-input-placeholder,
+.anja_goder_cs_shortcode_wrapper input[type="text"]::-webkit-input-placeholder,
+.anja_goder_cs_shortcode_wrapper textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+.anja_goder_cs_shortcode_wrapper input[type="email"]::-moz-placeholder,
+.anja_goder_cs_shortcode_wrapper input[type="number"]::-moz-placeholder,
+.anja_goder_cs_shortcode_wrapper input[type="password"]::-moz-placeholder,
+.anja_goder_cs_shortcode_wrapper input[type="search"]::-moz-placeholder,
+.anja_goder_cs_shortcode_wrapper input[type="text"]::-moz-placeholder,
+.anja_goder_cs_shortcode_wrapper textarea::-moz-placeholder {
+  color: #fff;
+}

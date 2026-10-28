@@ -38,9 +38,9 @@ After configuration, test delivery using your own address. Successful delivery a
 
 ## Editing
 
-Edit each page's `index.html` directly. Shared presentation styles live in `docs/assets/styles/` and `docs/assets/theme/css/`; new overrides live in `docs/assets/site.css`. Site integrations and search are in `docs/assets/site.js`. Photography is in `docs/assets/media/`.
+Edit each page's `index.html` directly. Shared presentation styles live in `docs/assets/styles/` and `docs/assets/theme/css/`; new overrides live in `docs/assets/site.css`. Site integrations and search are in `docs/assets/site.js`. Photography is in `docs/assets/media/`. Published CSS and JavaScript are minified. Readable copies of the custom assets are kept under `source/assets/` for maintenance; changes there must also be copied/minified into the corresponding `docs/assets/` files. The site runs and deploys directly from `docs/`, without a build step.
 
-The original theme's browser-only menu, slider, and gallery scripts are retained to preserve appearance and behavior. Server loading code was removed; the project index contains all 15 projects in its HTML. Gallery load-more reads image data embedded in each page. Browser search reads `docs/assets/search.json`; update that file and `docs/sitemap.xml` when adding or changing content.
+Presentation classes and script identifiers use the `anja_goder` namespace. Unused theme features, page-builder JavaScript, WordPress bookkeeping classes, and empty AJAX controls have been removed. The remaining gallery and menu behavior preserves the existing appearance. Server loading code was removed; the project index contains all 15 projects in its HTML. Gallery load-more reads image data embedded in each page. Browser search reads `docs/assets/search.json`; update that file and `docs/sitemap.xml` when adding or changing content.
 
 ## Migration scope and checks
 
@@ -48,10 +48,14 @@ Migrated 50 published content pages: 10 pages, 10 posts, 15 projects, and 15 alb
 
 The backup has three draft event records and no published events. The public Events page retains its empty state. Drafts, subscribers, form submissions, credentials, administrative files, and the database are excluded from the output.
 
-The backup's original coming-soon background was missing; its largest available derivative is used. A missing lightbox stylesheet was restored. Social sharing and canonical URLs point to the production domain. The contact form was added below the original email link and photo strip.
+The backup's original coming-soon background was missing; its largest available derivative is used. A missing lightbox stylesheet was restored. Social sharing and canonical URLs point to the temporary GitHub Pages address. The contact form was added below the original email link and photo strip.
 
 Local file checks cover HTML links, images, gallery data, responsive image sources, stylesheet dependencies, and scripts. Browser checks cover the homepage, project listing, gallery load-more and lightbox, contact fallback, newsletter fallback, search, and narrow layouts. External destinations, YouTube availability, newsletter delivery, and real contact delivery remain dependent on their providers.
 
 The local WordPress reference uses Docker containers `anja-reference-web74` and `anja-reference-db` and is available at http://localhost:8073 while running. It is solely a migration reference. Its files are in `.migration/reference`; `original/` is unchanged.
 
 The review preview runs in Docker container `anja-static-preview` at http://127.0.0.1:8074. Stop it with `docker stop anja-static-preview` when finished.
+
+## Asset cleanup checks (2026-10-28)
+
+The cleanup compared desktop layouts at 1440px and mobile layouts at 390px against the saved pre-cleanup site. Checked Contact, Projects, About, Blog, project detail, and Events pages, plus mobile menu/Escape, gallery load-more and lightbox, browser search, and unconfigured form messages. Production CSS dropped from about 1.08 MB to 133 KB; JavaScript dropped from 243 KB to 154 KB. Runtime-generated gallery, menu, and lightbox classes are retained. Required third-party libraries are retained as libraries rather than pruning their internal implementation.

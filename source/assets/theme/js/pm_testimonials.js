@@ -1,0 +1,134 @@
+"use strict";
+var anja_goder_ft_array = [],
+  $anja_goder_testimonials_flow = jQuery(".anja_goder_testimonials_flow");
+($anja_goder_testimonials_flow.each(function () {
+  var a = jQuery(this);
+  anja_goder_ft_array["anja_goder_ft_" + a.attr("data-uniqid")] = {};
+  var t = anja_goder_ft_array["anja_goder_ft_" + a.attr("data-uniqid")];
+  ((t.id = a.attr("data-uniqid")),
+    (t.obj = a),
+    (t.size = a.find(".anja_goder_testimonials_flow_item").length),
+    (t.active_slide = 0),
+    (t.init = function () {
+      var a = 1;
+      (this.obj.find(".anja_goder_testimonials_flow_item").each(function () {
+        (jQuery(this)
+          .attr("data-count", a)
+          .addClass("anja_goder_testimonials_flow_slide" + a),
+          a++);
+      }),
+        this.obj.addClass("module_loaded"));
+      var t = this;
+      (this.obj
+        .find(".anja_goder_testimonials_flow_prev")
+        .on("click", function () {
+          t.move.call(t, -1);
+        }),
+        this.obj
+          .find(".anja_goder_testimonials_flow_next")
+          .on("click", function () {
+            t.move.call(t, 1);
+          }),
+        this.obj.on("swiperight", function () {
+          t.move.call(t, -1);
+        }),
+        this.obj.on("swipeleft", function () {
+          t.move.call(t, 1);
+        }));
+      var i = this.obj.find(".anja_goder_testimonials_flow_dots");
+      a = 1;
+      (this.obj.find(".anja_goder_testimonials_flow_item").each(function () {
+        (jQuery(this)
+          .attr("data-count", a)
+          .addClass("anja_goder_testimonials_flow_slide" + a),
+          i.append(
+            '<a href="javascript:void(0)" class="anja_goder_testimonials_flow_dot anja_goder_testimonials_flow_dot' +
+              a +
+              '" data-count="' +
+              a +
+              '"></a>',
+          ),
+          a++);
+      }),
+        jQuery(this).addClass("module_loaded"),
+        this.move.call(this, 1));
+    }),
+    (t.update = function () {
+      jQuery(".anja_goder_ts_flow_current").length &&
+        jQuery(".anja_goder_ts_flow_current").each(function () {
+          jQuery(this)
+            .parents(".anja_goder_testimonials_flow_inner")
+            .css("min-height", jQuery(this).height() + "px");
+        });
+    }),
+    (t.move = function (a) {
+      ((a = parseInt(a, 10)) > 0 && this.active_slide++,
+        a < 0 && this.active_slide--,
+        (this.active_slide = this.check.call(this, this.active_slide)),
+        this.set.call(this, this.active_slide));
+    }),
+    (t.check = function (a) {
+      return (
+        (a = parseInt(a, 10)) < 1 && (a = this.size),
+        a > this.size && (a = 1),
+        a
+      );
+    }),
+    (t.set = function (a) {
+      ((a = parseInt(a, 10)),
+        this.obj
+          .find(".anja_goder_ts_flow_prev")
+          .removeClass("anja_goder_ts_flow_prev"),
+        this.obj
+          .find(".anja_goder_ts_flow_current")
+          .removeClass("anja_goder_ts_flow_current"),
+        this.obj
+          .find(".anja_goder_ts_flow_next")
+          .removeClass("anja_goder_ts_flow_next"));
+      var t = a - 1,
+        i = a + 1;
+      ((t = this.check.call(this, t)),
+        (i = this.check.call(this, i)),
+        this.obj
+          .find("[data-count=" + t + "]")
+          .addClass("anja_goder_ts_flow_prev"),
+        this.obj
+          .find("[data-count=" + a + "]")
+          .addClass("anja_goder_ts_flow_current"),
+        this.obj
+          .find("[data-count=" + i + "]")
+          .addClass("anja_goder_ts_flow_next"),
+        this.update.call(this));
+    }));
+}),
+  jQuery(document).ready(function () {
+    $anja_goder_testimonials_flow.each(function () {
+      var a = jQuery(this),
+        t = anja_goder_ft_array["anja_goder_ft_" + a.attr("data-uniqid")];
+      t.init.call(t);
+    });
+  }),
+  jQuery(window).on("load", function () {
+    $anja_goder_testimonials_flow.each(function () {
+      var a = jQuery(this),
+        t = anja_goder_ft_array["anja_goder_ft_" + a.attr("data-uniqid")];
+      t.update.call(t);
+    });
+  }),
+  jQuery(window).resize(function () {
+    $anja_goder_testimonials_flow.each(function () {
+      var a = jQuery(this),
+        t = anja_goder_ft_array["anja_goder_ft_" + a.attr("data-uniqid")];
+      t.update.call(t);
+    });
+  }),
+  jQuery(document).on(
+    "click",
+    ".anja_goder_testimonials_flow_dot",
+    function () {
+      var a = jQuery(this).parents(".anja_goder_testimonials_flow"),
+        t = anja_goder_ft_array["anja_goder_ft_" + a.attr("data-uniqid")];
+      ((t.active_slide = jQuery(this).attr("data-count")),
+        t.set.call(t, t.active_slide));
+    },
+  ));

@@ -1,0 +1,237 @@
+"use strict";
+var anja_goder_ribbon_array = [],
+  $anja_goder_rs_wrapper = jQuery(".anja_goder_ribbon_slider_wrapper");
+($anja_goder_rs_wrapper.each(function () {
+  var a = jQuery(this);
+  anja_goder_ribbon_array["anja_goder_ribbon_" + a.attr("data-uniqid")] = {};
+  var r = anja_goder_ribbon_array["anja_goder_ribbon_" + a.attr("data-uniqid")];
+  ((r.id = a.attr("data-uniqid")),
+    (r.dom = a),
+    (r.slider = a.find(".anja_goder_ribbon_slider")),
+    (r.active_slide = 0),
+    (r.max = a.find(".anja_goder_ribbon_slide").length),
+    (r.state = "loading"),
+    (r.slides = []),
+    "" == a.attr("data-pad") ? (r.margin = 0) : (r.margin = a.attr("data-pad")),
+    (r.autoplay = a.attr("data-autoplay")),
+    (r.interval = a.attr("data-interval")),
+    (r.transition = a.attr("data-transition")),
+    (r.height = a.attr("data-height")),
+    (r.init = function () {
+      var a = this;
+      (this.layout(this, ""),
+        jQuery("body").append(
+          "            <style>                .anja_goder_ribbon_gal_" +
+            this.id +
+            " .anja_goder_ribbon_slide {                    transition: transform " +
+            this.transition +
+            "ms, opacity 600ms;                }            </style>",
+        ),
+        a.dom.find(".anja_goder_ribbon_slide").each(function () {
+          a.slides[jQuery(this).attr("data-count")] = {};
+          var r = a.slides[jQuery(this).attr("data-count")],
+            e = jQuery(this);
+          ((r.src = e.attr("data-src")),
+            (r.title = e.attr("data-title")),
+            (r.ratio = e.attr("data-ratio")),
+            (r.descr = e.attr("data-descr")),
+            e.remove());
+        }),
+        a.dom.find(".anja_goder_ribbon_prevSlide").on("click", function () {
+          var a = jQuery(this).parent(".anja_goder_ribbon_slider_wrapper"),
+            r =
+              anja_goder_ribbon_array[
+                "anja_goder_ribbon_" + a.attr("data-uniqid")
+              ];
+          r.move.call(r, -1);
+        }),
+        a.dom.find(".anja_goder_ribbon_nextSlide").on("click", function () {
+          var a = jQuery(this).parent(".anja_goder_ribbon_slider_wrapper"),
+            r =
+              anja_goder_ribbon_array[
+                "anja_goder_ribbon_" + a.attr("data-uniqid")
+              ];
+          r.move.call(r, 1);
+        }),
+        a.dom.on("mouseenter", function () {
+          a.dom.addClass("anja_goder_ribbon_kbrd");
+        }),
+        a.dom.on("mouseleave", function () {
+          a.dom.removeClass("anja_goder_ribbon_kbrd");
+        }),
+        (this.active_slide = 1));
+      var r = this.max,
+        e = this.max - 1;
+      e = this.check.call(a, e);
+      var t = 2,
+        i = (t = this.check.call(a, t)) + 1;
+      i = this.check.call(a, i);
+      var n = this.get.call(a, e),
+        d = this.get.call(a, r),
+        o = this.get.call(a, 1),
+        s = this.get.call(a, t),
+        _ = this.get.call(a, i);
+      (this.slider.append(n).append(d).append(o).append(s).append(_),
+        this.dom.find('[data-count="1"]').addClass("active"),
+        a.layout.call(a),
+        "on" == a.autoplay &&
+          (a.set_interval = setInterval(
+            function () {
+              a.move.call(a, 1);
+            },
+            parseInt(a.interval, 10),
+          )));
+    }),
+    (r.load = function () {}),
+    (r.layout = function (a) {
+      var r = this;
+      ("100%" == r.height
+        ? (jQuery("#wpadminbar").length
+            ? r.dom.css(
+                "height",
+                "calc(100vh - " + jQuery("#wpadminbar").height() + "px)",
+              )
+            : r.dom.css("height", "100vh"),
+          r.slider.css("height", "100vh"),
+          r.dom.find(".anja_goder_ribbon_slide").css("height", "100vh"),
+          r.dom.find(".anja_goder_ribbon_slide").each(function () {
+            jQuery(this).width(
+              jQuery(this).height() * jQuery(this).attr("data-ratio"),
+            );
+          }))
+        : (r.dom.height(parseInt(r.height, 10)),
+          r.slider.height(parseInt(r.height, 10)),
+          r.dom.find(".anja_goder_ribbon_slide").height(parseInt(r.height, 10)),
+          r.dom.find(".anja_goder_ribbon_slide").each(function () {
+            jQuery(this).width(
+              jQuery(this).height() * jQuery(this).attr("data-ratio"),
+            );
+          })),
+        r.dom.hasClass("anja_goder_stand_alone_slider") &&
+          jQuery("#wpadminbar").length &&
+          r.dom.css("top", jQuery("#wpadminbar").height() + "px"),
+        r.set.call(r));
+    }),
+    (r.set = function () {
+      var a = this,
+        r = parseInt(a.margin, 10),
+        e = jQuery(this.slider.find(".anja_goder_ribbon_slide")[0]),
+        t = jQuery(this.slider.find(".anja_goder_ribbon_slide")[1]),
+        i = jQuery(this.slider.find(".anja_goder_ribbon_slide")[2]),
+        n = jQuery(this.slider.find(".anja_goder_ribbon_slide")[3]),
+        d = jQuery(this.slider.find(".anja_goder_ribbon_slide")[4]),
+        o = -1 * (i.width() / 2 + t.width() + e.width()) - 2 * r,
+        s = -1 * (i.width() / 2 + t.width()) - r,
+        _ = -0.5 * i.width(),
+        l = 0.5 * i.width() + r,
+        h = 0.5 * i.width() + n.width() + 2 * r;
+      if (
+        (e.css("transform", "translateX(" + o + "px)"),
+        t.css("transform", "translateX(" + s + "px)"),
+        i.css("transform", "translateX(" + _ + "px)"),
+        n.css("transform", "translateX(" + l + "px)"),
+        d.css("transform", "translateX(" + h + "px)"),
+        a.dom.find(".anja_goder_ribbon_title_content").length)
+      ) {
+        var b = a.dom.find(".anja_goder_ribbon_title"),
+          c = i.attr("data-title");
+        b.fadeOut(300, function () {
+          (b.text(c), b.fadeIn(300));
+        });
+      }
+    }),
+    (r.get = function (a, r) {
+      if ("new" == r) var e = "anja_goder_new_slide";
+      else e = "";
+      var t = this.slides[a].src,
+        i = this.slides[a].title;
+      return (
+        '                <div class="anja_goder_ribbon_slide ' +
+        e +
+        '" data-count="' +
+        a +
+        '" data-title="' +
+        i +
+        '" data-descr="' +
+        this.slides[a].descr +
+        '" data-ratio="' +
+        this.slides[a].ratio +
+        '">                    <img alt="' +
+        i +
+        '" src="' +
+        t +
+        '" />\t\t\t\t    <div class="anja_goder_ribbon_overlay"></div>                    <div class="anja_goder_ribbon_overlay_active"></div>                </div>            '
+      );
+    }),
+    (r.check = function (a) {
+      return (a > this.max && (a = 1), a < 1 && (a = this.max), a);
+    }),
+    (r.move = function (a) {
+      var r = this;
+      if (
+        (r.slider.find(".anja_goder_ribbon_slide.active").removeClass("active"),
+        r.slider
+          .find(".anja_goder_new_slide")
+          .removeClass("anja_goder_new_slide"),
+        "on" == r.autoplay && clearInterval(r.set_interval),
+        a > 0)
+      ) {
+        r.slider.find(".anja_goder_ribbon_slide")[0].remove();
+        var e =
+          parseInt(
+            r.slider.find(".anja_goder_ribbon_slide:last").attr("data-count"),
+            10,
+          ) + 1;
+      } else if (a < 0) {
+        r.slider.find(".anja_goder_ribbon_slide")[4].remove();
+        e =
+          parseInt(
+            r.slider.find(".anja_goder_ribbon_slide:first").attr("data-count"),
+            10,
+          ) - 1;
+      }
+      e = r.check.call(r, e);
+      var t = this.get.call(r, e, "new");
+      (a > 0 ? r.slider.append(t) : a < 0 && r.slider.prepend(t),
+        jQuery(r.slider.find(".anja_goder_ribbon_slide")[2]).addClass("active"),
+        r.set.call(r),
+        "on" == r.autoplay &&
+          (r.set_interval = setInterval(
+            function () {
+              r.move.call(r, 1);
+            },
+            parseInt(r.interval, 10),
+          )));
+    }));
+}),
+  jQuery(document).ready(function () {
+    $anja_goder_rs_wrapper.length &&
+      $anja_goder_rs_wrapper.each(function () {
+        var a = jQuery(this),
+          r =
+            anja_goder_ribbon_array[
+              "anja_goder_ribbon_" + a.attr("data-uniqid")
+            ];
+        r.init.call(r);
+      });
+  }),
+  jQuery(window).resize(function () {
+    $anja_goder_rs_wrapper.length &&
+      $anja_goder_rs_wrapper.each(function () {
+        var a = jQuery(this),
+          r =
+            anja_goder_ribbon_array[
+              "anja_goder_ribbon_" + a.attr("data-uniqid")
+            ];
+        r.layout.call(r);
+      });
+  }),
+  jQuery(document.documentElement).keyup(function (a) {
+    if (jQuery("body").find(".anja_goder_ribbon_kbrd").length) {
+      var r = jQuery("body").find(".anja_goder_ribbon_kbrd"),
+        e =
+          anja_goder_ribbon_array["anja_goder_ribbon_" + r.attr("data-uniqid")];
+      (37 == a.keyCode && e.move.call(e, -1),
+        39 == a.keyCode && e.move.call(e, 1));
+    }
+  }));
