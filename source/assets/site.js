@@ -67,25 +67,6 @@ const contact = document.querySelector("#contact-form");
     }
   }
 }),
-  document.querySelectorAll("[data-newsletter]").forEach((e) => {
-    if (config.mailchimpAction)
-      try {
-        const t = new URL(config.mailchimpAction);
-        "https:" === t.protocol &&
-          /\.list-manage\.com$/.test(t.hostname) &&
-          ((e.action = t.href),
-          (e.target = "_blank"),
-          (e.rel = "noopener noreferrer"));
-      } catch {}
-    e.addEventListener("submit", (t) => {
-      "#" === e.getAttribute("action") &&
-        (t.preventDefault(),
-        status(
-          e,
-          "Newsletter signup is not available yet. Please check back soon.",
-        ));
-    });
-  }),
   document.querySelectorAll('a[href="javascript:void(0)"]').forEach((e) => {
     (e.setAttribute("role", "button"),
       e.textContent.trim() ||

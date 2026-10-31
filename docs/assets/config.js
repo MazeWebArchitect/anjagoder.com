@@ -1,1 +1,1 @@
-window.siteConfig=Object.freeze({formsparkFormId:"",botpoisonPublicKey:"",mailchimpAction:""});
+window.siteConfig=Object.freeze({formsparkFormId:"",botpoisonPublicKey:""});
